@@ -2,6 +2,11 @@ import time
 import pandas as pd
 import numpy as np
 
+"""
+The program is used to analyze the Bikeshare data for three cities (Chicago, New York, and Washington)
+"""
+
+# dictionary containing the file path for each city data
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -20,7 +25,7 @@ def get_filters():
     city = str(input('Would you like to see data for Chicago, New York, or Washington? ')).lower()
     while(city != 'chicago' and city != 'new york' and city != 'washington'):
         city = str(input('Please choose one of the cities to see data Chicago, New York, or Washington. ')).lower()
-    
+
     if(city == 'new york'):
         city = 'new york city'
     # TO DO: get user input for month (all, january, february, ... , june)
@@ -51,7 +56,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -153,7 +158,7 @@ def user_stats(df):
     print('\nCount of User Types:\n', df['User Type'].value_counts())
 
     if('Gender' in df.columns):
-        # TO DO: Display counts of gender 
+        # TO DO: Display counts of gender
         print('\nCount of Gender:\n', df['Gender'].value_counts())
 
         # TO DO: Display earliest, most recent, and most common year of birth

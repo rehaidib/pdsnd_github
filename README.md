@@ -11,9 +11,6 @@ The project will ask the user to choose a city first, then decide if would like 
 
 ### Files used
 (code) bikeshare.py
-(data) chicago.csv
-(data) new_york_city.csv
-(data) washington.csv
 
 ### Credits
 https://www.udacity.com/
