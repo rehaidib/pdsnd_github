@@ -55,6 +55,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+    # read data file for the city that have been choosen from user
     df = pd.read_csv(CITY_DATA[city])
 
     # convert the Start Time column to datetime
@@ -101,6 +102,7 @@ def time_stats(df):
 
     # extract hour from the Start Time column to create an hour column
     df['hour'] = df['Start Time'].dt.hour
+    # get the most common hour
     popular_hour = df['hour'].mode()[0]
     print('Most Frequent Start Hour:', popular_hour)
 
