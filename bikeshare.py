@@ -86,9 +86,6 @@ def time_stats(df):
     print('Most Frequent Day of Week:', popular_dow)
 
     # TO DO: display the most common start hour
-    # convert the Start Time column to datetime
-    df['Start Time'] = pd.to_datetime(df['Start Time'])
-
     # extract hour from the Start Time column to create an hour column
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
