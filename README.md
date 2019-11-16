@@ -1,15 +1,19 @@
 ### Date created
-Include the date you created this project and README file.
+11/15/2019
 
 ### Project Title
-Replace the Project Title
+Bikeshare-2
 
 ### Description
-Describe what your project is about and what it does
+The project analysis Bikeshare data for 3 cities (New York, Washington, and Chicago).
+
+The project will ask the user to choose a city first, then decide if would like to filter data or not.
 
 ### Files used
-Include the files used
+bikeshare.py
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+https://www.udacity.com/
