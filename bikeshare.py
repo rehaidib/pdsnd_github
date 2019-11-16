@@ -23,9 +23,10 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = str(input('Would you like to filter the data by (January, February, March, April, May, June) or not? ')).lower()
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
-    while(month != 'not' and month not in months):
+    months = {'not':0,'january':1, 'february':2, 'march':3, 'april':4, 'may':5, 'june':6}
+    while month not in months:
         month = str(input('Please choose one of the months (January, February, March, April, May, June) or not. ')).lower()
+    month = months[month]
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = str(input('Would you like to filter the data by (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturdaye) or not? ')).lower()
@@ -58,11 +59,7 @@ def load_data(city, month, day):
     df['day_of_week'] = df['Start Time'].dt.weekday_name
 
     # filter by month if applicable
-    if month != 'not':
-        # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month) + 1
-
+    if month != 0:
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
