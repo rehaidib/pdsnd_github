@@ -10,10 +10,10 @@ The project analysis Bikeshare data for 3 cities (New York, Washington, and Chic
 The project will ask the user to choose a city first, then decide if would like to filter data or not.
 
 ### Files used
-bikeshare.py
-chicago.csv
-new_york_city.csv
-washington.csv
+(code) bikeshare.py
+(data) chicago.csv
+(data) new_york_city.csv
+(data) washington.csv
 
 ### Credits
 https://www.udacity.com/
