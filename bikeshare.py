@@ -17,12 +17,10 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = str(input('Would you like to see data for Chicago, New York, or Washington? ')).lower()
-    while(city != 'chicago' and city != 'new york' and city != 'washington'):
-        city = str(input('Please choose one of the cities to see data Chicago, New York, or Washington. ')).lower()
-    
-    if(city == 'new york'):
-        city = 'new york city'
+    city = str(input('Would you like to see data for Chicago, New York City, or Washington? ')).lower()
+    while city not in CITY_DATA:
+        city = str(input('Please choose one of the cities to see data Chicago, New York City, or Washington. ')).lower()
+
     # TO DO: get user input for month (all, january, february, ... , june)
     month = str(input('Would you like to filter the data by (January, February, March, April, May, June) or not? ')).lower()
     months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -51,7 +49,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -153,7 +151,7 @@ def user_stats(df):
     print('\nCount of User Types:\n', df['User Type'].value_counts())
 
     if('Gender' in df.columns):
-        # TO DO: Display counts of gender 
+        # TO DO: Display counts of gender
         print('\nCount of Gender:\n', df['Gender'].value_counts())
 
         # TO DO: Display earliest, most recent, and most common year of birth
